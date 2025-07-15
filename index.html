@@ -1,28 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Progressive Web App</title>
-    <meta name="msapplication-TileColor" content="#af0a1a">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="img/fav-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/fav-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/fav-16.png">
-    <link rel="apple-touch-icon" href="img/fav-57.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/fav-114.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/fav-72.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/fav-144.png">
-    <link rel="manifest" href="pwa-manifest.json">
-    <link rel="stylesheet" href="css/style.css">
-    <script type='text/javascript' src="js/main.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Events</title>
+
+  <!-- Theme color for PWA -->
+  <meta name="msapplication-TileColor" content="#af0a1a">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Favicon and touch icons -->
+  <link rel="shortcut icon" href="img/fav-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/fav-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/fav-16.png">
+  <link rel="apple-touch-icon" href="img/fav-57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/fav-114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/fav-72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/fav-144.png">
+
+  <!-- PWA Manifest -->
+  <link rel="manifest" href="pwa-manifest.json" />
+
+  <!-- Offline Fallback Styles -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    /* Offline fallback styling (if used on a page) */
+    a {
+      color: #007bff;
+      text-decoration: none;
+      background-color: transparent;
+    }
+    .content {
+      text-align: center;
+      margin-top: 15%;
+    }
+    .reload-btn {
+      text-align: center;
+      background: #eee;
+      padding: 10px;
+      color: rgb(61, 61, 61);
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 230px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="content">
-        <img src="img/fav-192.png" alt="Red Cherry">
-        <h1>Red Cherry is here :)</h1>
-        <a href="https://redcherry.ir">redcherry.ir</a>
-    </div>
+  <!-- Fullscreen embed iframe -->
+  <iframe src="https://wordpress.vovxb.fun/mobileevents/" allowfullscreen></iframe>
+
+  <!-- Service worker registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(reg => console.log('Service Worker registered:', reg.scope))
+        .catch(err => console.error('Service Worker registration failed:', err));
+    }
+  </script>
 </body>
 </html>
