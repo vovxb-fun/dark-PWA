@@ -1,7 +1,7 @@
 {
-    "name": "RedCherry",
-    "short_name": "RedCherry",
-    "description": "RedCherry Simple PWA",
+    "name": "BKMI",
+    "short_name": "BKMI Events",
+    "description": "Events App",
     "icons": [
         {
             "src": "img/fav-192.png",
@@ -34,6 +34,6 @@
     "start_url": ".",
     "url": "index.html",
     "scope": ".",
-    "lang": "fa-IR",
-    "dir": "rtl"
+    "lang": "en-US",
+    "dir": "ltre"
 }
